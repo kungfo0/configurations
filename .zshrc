@@ -21,8 +21,6 @@ source $ZSH/oh-my-zsh.sh
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-# export M2_HOME=/usr/local/Cellar/maven-deluxe/3.3.9-6/libexec
-
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # begin bold
@@ -37,7 +35,7 @@ alias la='ls -la'
 alias svim="sudo vim"
 alias servethis="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"
 #alias mitproxy='proxychains4 mitmproxy -p 8888'
-alias mitproxy='mitmproxy -p 8888'
+alias mitproxy='mitmproxy -p 8888 --insecure'
 eval "$(thefuck --alias)"
 alias weather="curl -sS http://cdn.fmi.fi/weather-observations/products/finland/finland-weather-observations-map.png | imgcat && ansiweather -a false -s false"
 
