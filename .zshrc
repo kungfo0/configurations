@@ -37,7 +37,7 @@ alias servethis="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"
 #alias mitproxy='proxychains4 mitmproxy -p 8888'
 alias mitproxy='mitmproxy -p 8888 --insecure'
 eval "$(thefuck --alias)"
-alias weather="curl -sS http://cdn.fmi.fi/weather-observations/products/finland/finland-weather-observations-map.png | imgcat && ansiweather -a false -s false"
+alias weather="curl -sS http://cdn.fmi.fi/weather-observations/products/finland/finland-weather-observations-map.png | imgcat && ansiweather -l Tampere,FI -u metric -a false -s false"
 
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
 
@@ -58,3 +58,4 @@ function mkcd() {
 }
 
 source ~/work.sh
+
