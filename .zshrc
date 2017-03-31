@@ -57,5 +57,9 @@ function mkcd() {
     mkdir -p "$@" && cd "$_";
 }
 
+function emo() {
+    emoj -c "$(trans -brief fi: $1)"
+}
+
 source ~/work.sh
 
