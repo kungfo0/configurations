@@ -21,15 +21,6 @@ source $ZSH/oh-my-zsh.sh
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-# Less Colors for Man Pages
-export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
-export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # begin bold
-export LESS_TERMCAP_me=$'\e[0m'           # end mode
-export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
-export LESS_TERMCAP_so=$'\e[38;5;246m'    # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\e[0m'           # end underline
-export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline]'
-
 alias ll='ls -latr'
 alias la='ls -la'
 alias svim="sudo vim"
@@ -38,6 +29,9 @@ alias servethis="python -c 'import SimpleHTTPServer; SimpleHTTPServer.test()'"
 alias mitproxy='mitmproxy -p 8888 --insecure'
 eval "$(thefuck --alias)"
 alias weather="curl -sS http://cdn.fmi.fi/weather-observations/products/finland/finland-weather-observations-map.png | imgcat && ansiweather -l Tampere,FI -u metric -a false -s false"
+alias apache_start="sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.httpd22.plist"
+alias apache_stop="sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.httpd22.plist"
+alias apache_restart="sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.httpd22.plist &&  sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.httpd22.plist"
 
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
 
@@ -58,8 +52,8 @@ function mkcd() {
 }
 
 function emo() {
-    emoj -c "$(trans -brief fi: $1)"
+    en=$(eval "trans -brief fi: \"$@\"")
+    emoj -c "$en"
 }
 
 source ~/work.sh
-
