@@ -14,13 +14,15 @@ export TTC_WEATHER=Tampere
 export TTC_APIKEYS=false
 export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
 
-ZSH_THEME=""
+ZSH_THEME="spaceship"
 plugins=(aws zsh-autosuggestions docker web-search httpie command-not-found git colored-man colorize github jira virtualenv pip python brew osx zsh-syntax-highlighting)
+
+
 
 source $ZSH/oh-my-zsh.sh
 
 autoload -U promptinit; promptinit
-prompt pure
+# prompt pure
 
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
@@ -90,3 +92,7 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f $HOME/.nvm/versions/node/v5.12.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . $HOME/.nvm/versions/node/v5.12.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/mattikar/.nvm/versions/node/v11.2.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/mattikar/.nvm/versions/node/v11.2.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
